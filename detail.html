@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Closer Look — This Day in History</title>
+    <meta
+      name="description"
+      content="The fuller story behind a single entry from the almanac, with the Wikipedia summary and a link to the source article."
+    />
+    <meta property="og:title" content="A Closer Look — This Day in History" />
+    <meta property="og:description" content="The fuller story behind one entry from the almanac." />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Spectral:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script>
+      try {
+        if (localStorage.getItem("tdih-theme") === "neon") document.body.className = "neon";
+      } catch (e) {}
+    </script>
+    <div class="motifs" aria-hidden="true">
+      <div class="motif motif--quill">
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M104 14C74 20 46 42 32 70c-4 8-6 16-7 24" />
+          <path d="M104 14c2 26-8 48-26 62-9 7-19 11-29 12" />
+          <path d="M25 94l-12 12" />
+          <path d="M31 78c10 2 20 0 28-6" />
+          <path d="M46 58c11 3 22 1 31-6" />
+          <path d="M63 40c10 3 20 2 29-4" />
+        </svg>
+      </div>
+      <div class="motif motif--hourglass">
+        <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10h60M20 110h60" />
+          <path d="M28 10c0 22 22 34 22 50 0 16-22 28-22 50" />
+          <path d="M72 10c0 22-22 34-22 50 0 16 22 28 22 50" />
+          <path d="M36 96c4-10 10-14 14-14s10 4 14 14z" />
+          <path d="M50 44v14" />
+        </svg>
+      </div>
+      <div class="motif motif--laurel">
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 108C34 74 52 44 92 16" />
+          <path d="M34 84c-8 2-14-2-16-10 8-4 15-2 19 5z" />
+          <path d="M44 68c-8 1-14-4-14-12 8-3 15 0 18 7z" />
+          <path d="M56 52c-8 0-13-6-12-14 8-2 14 2 16 9z" />
+          <path d="M70 38c-7-1-12-8-10-15 8-1 13 4 14 11z" />
+          <path d="M42 82c2 8 9 12 17 10-2-8-9-12-17-10z" />
+          <path d="M54 66c1 8 8 12 16 10-2-8-8-12-16-10z" />
+          <path d="M68 50c1 8 8 12 16 9-2-8-8-11-16-9z" />
+        </svg>
+      </div>
+      <div class="motif motif--compass">
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="60" cy="60" r="46" />
+          <circle cx="60" cy="60" r="30" />
+          <path d="M60 8v10M60 102v10M8 60h10M102 60h10" />
+          <path d="M60 18l10 42-10 42-10-42z" />
+          <path d="M18 60l42-10 42 10-42 10z" />
+        </svg>
+      </div>
+      <div class="motif motif--book">
+        <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 26c-12-10-28-14-46-12v58c18-2 34 2 46 12 12-10 28-14 46-12V14c-18-2-34 2-46 12z" />
+          <path d="M60 26v58" />
+          <path d="M22 34h24M22 48h24M22 62h20" />
+          <path d="M74 34h24M74 48h24M78 62h20" />
+        </svg>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <div class="topbar">
+        <label class="dimmer" for="brightness">
+          <span>Lamp brightness</span>
+          <input type="range" id="brightness" min="20" max="150" step="5" value="100" />
+        </label>
+        <label class="switch" for="themeToggle">
+          <input type="checkbox" id="themeToggle" />
+          <span class="track"><span class="knob"></span></span>
+          <span id="themeLabel">Lamplight</span>
+        </label>
+      </div>
+
+
+      <a class="back" href="index.html">← Back to the almanac</a>
+
+      <article class="leaf leaf--enter">
+        <div class="hero" id="hero">
+          <svg class="placeholder" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 108C34 74 52 44 92 16" />
+            <path d="M34 84c-8 2-14-2-16-10 8-4 15-2 19 5z" />
+            <path d="M44 68c-8 1-14-4-14-12 8-3 15 0 18 7z" />
+            <path d="M56 52c-8 0-13-6-12-14 8-2 14 2 16 9z" />
+            <path d="M70 38c-7-1-12-8-10-15 8-1 13 4 14 11z" />
+            <path d="M42 82c2 8 9 12 17 10-2-8-9-12-17-10z" />
+            <path d="M54 66c1 8 8 12 16 10-2-8-8-12-16-10z" />
+            <path d="M68 50c1 8 8 12 16 9-2-8-8-11-16-9z" />
+          </svg>
+        </div>
+
+        <span class="badge" id="badge">Almanac entry</span>
+        <h1 class="subject" id="subject">An entry from the almanac</h1>
+        <p class="pullquote" id="quote"></p>
+        <p class="extract" id="extract">Fetching the fuller story…</p>
+
+        <div class="card-foot" id="foot"></div>
+      </article>
+    </main>
+
+    <script>
+      (function () {
+        var themeToggle = document.getElementById("themeToggle");
+        var themeLabel = document.getElementById("themeLabel");
+
+        var brightness = document.getElementById("brightness");
+
+        function setGlow(v) {
+          document.body.style.setProperty("--glow", String(v / 100));
+          brightness.value = String(v);
+          try { localStorage.setItem("tdih-glow", String(v)); } catch (e) {}
+        }
+
+        function setTheme(on) {
+          document.body.classList.toggle("neon", on);
+          themeToggle.checked = on;
+          themeLabel.textContent = on ? "Lamplight" : "Reading room";
+          try { localStorage.setItem("tdih-theme", on ? "neon" : "day"); } catch (e) {}
+        }
+
+        var storedTheme = null, storedGlow = null;
+        try {
+          storedTheme = localStorage.getItem("tdih-theme");
+          storedGlow = localStorage.getItem("tdih-glow");
+        } catch (e) {}
+        setTheme(storedTheme === "neon");
+        setGlow(storedGlow ? Number(storedGlow) : 100);
+        themeToggle.addEventListener("change", function () { setTheme(themeToggle.checked); });
+        brightness.addEventListener("input", function () { setGlow(Number(brightness.value)); });
+
+
+        var LABELS = { events: "Events", births: "Births", deaths: "Deaths" };
+        var q = new URLSearchParams(location.search);
+        var title = q.get("title") || "";
+        var yearRaw = q.get("year") || "";
+        var text = q.get("text") || "";
+        var url = q.get("url") || "";
+        var category = q.get("category") || "";
+
+        var hero = document.getElementById("hero");
+        var badge = document.getElementById("badge");
+        var subject = document.getElementById("subject");
+        var quote = document.getElementById("quote");
+        var extract = document.getElementById("extract");
+        var foot = document.getElementById("foot");
+
+        function yearLabel(v) {
+          var n = Number(v);
+          if (!v || isNaN(n)) return "Undated";
+          return n < 0 ? Math.abs(n) + " BCE" : String(n);
+        }
+
+        var parts = [yearLabel(yearRaw)];
+        if (LABELS[category]) parts.push(LABELS[category]);
+        badge.textContent = parts.join(" · ");
+
+        if (title) {
+          subject.textContent = title.replace(/_/g, " ");
+          document.title = subject.textContent + " — This Day in History";
+        }
+
+        if (text) {
+          quote.textContent = "“" + text + "”";
+        } else {
+          quote.remove();
+        }
+
+        function renderSourceButton(href) {
+          if (!href) return;
+          var a = document.createElement("a");
+          a.className = "btn btn--solid";
+          a.href = href;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = "View source on Wikipedia";
+          foot.appendChild(a);
+        }
+
+        function fallback() {
+          extract.textContent = "You can still read the full story at the source.";
+          renderSourceButton(url);
+        }
+
+        if (!title) {
+          fallback();
+          return;
+        }
+
+        fetch(
+          "https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(title),
+          { headers: { Accept: "application/json" } }
+        )
+          .then(function (r) {
+            if (!r.ok) throw new Error("bad response");
+            return r.json();
+          })
+          .then(function (data) {
+            var img =
+              (data.originalimage && data.originalimage.source) ||
+              (data.thumbnail && data.thumbnail.source) ||
+              "";
+            if (img) {
+              var el = document.createElement("img");
+              el.src = img;
+              el.alt = data.title || subject.textContent;
+              el.loading = "lazy";
+              hero.innerHTML = "";
+              hero.appendChild(el);
+            }
+            if (data.title) {
+              subject.textContent = data.title;
+              document.title = data.title + " — This Day in History";
+            }
+            if (data.extract) {
+              extract.textContent = data.extract;
+            } else {
+              extract.textContent = "You can still read the full story at the source.";
+            }
+            var link =
+              url ||
+              (data.content_urls && data.content_urls.desktop
+                ? data.content_urls.desktop.page
+                : "");
+            renderSourceButton(link);
+          })
+          .catch(fallback);
+      })();
+    </script>
+  </body>
+</html>

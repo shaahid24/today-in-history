@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>This Day in History — An Almanac of Today</title>
+    <meta
+      name="description"
+      content="An almanac of everything that happened today: real historical events, births, and deaths for any date, drawn live from Wikipedia."
+    />
+    <meta property="og:title" content="This Day in History — An Almanac of Today" />
+    <meta
+      property="og:description"
+      content="Turn to any date and read the events, births, and deaths recorded for it."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Spectral:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="motifs" aria-hidden="true">
+      <div class="motif motif--quill">
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M104 14C74 20 46 42 32 70c-4 8-6 16-7 24" />
+          <path d="M104 14c2 26-8 48-26 62-9 7-19 11-29 12" />
+          <path d="M25 94l-12 12" />
+          <path d="M31 78c10 2 20 0 28-6" />
+          <path d="M46 58c11 3 22 1 31-6" />
+          <path d="M63 40c10 3 20 2 29-4" />
+        </svg>
+      </div>
+      <div class="motif motif--hourglass">
+        <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10h60M20 110h60" />
+          <path d="M28 10c0 22 22 34 22 50 0 16-22 28-22 50" />
+          <path d="M72 10c0 22-22 34-22 50 0 16 22 28 22 50" />
+          <path d="M36 96c4-10 10-14 14-14s10 4 14 14z" />
+          <path d="M50 44v14" />
+        </svg>
+      </div>
+      <div class="motif motif--laurel">
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 108C34 74 52 44 92 16" />
+          <path d="M34 84c-8 2-14-2-16-10 8-4 15-2 19 5z" />
+          <path d="M44 68c-8 1-14-4-14-12 8-3 15 0 18 7z" />
+          <path d="M56 52c-8 0-13-6-12-14 8-2 14 2 16 9z" />
+          <path d="M70 38c-7-1-12-8-10-15 8-1 13 4 14 11z" />
+          <path d="M42 82c2 8 9 12 17 10-2-8-9-12-17-10z" />
+          <path d="M54 66c1 8 8 12 16 10-2-8-8-12-16-10z" />
+          <path d="M68 50c1 8 8 12 16 9-2-8-8-11-16-9z" />
+        </svg>
+      </div>
+      <div class="motif motif--compass">
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="60" cy="60" r="46" />
+          <circle cx="60" cy="60" r="30" />
+          <path d="M60 8v10M60 102v10M8 60h10M102 60h10" />
+          <path d="M60 18l10 42-10 42-10-42z" />
+          <path d="M18 60l42-10 42 10-42 10z" />
+        </svg>
+      </div>
+      <div class="motif motif--book">
+        <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 26c-12-10-28-14-46-12v58c18-2 34 2 46 12 12-10 28-14 46-12V14c-18-2-34 2-46 12z" />
+          <path d="M60 26v58" />
+          <path d="M22 34h24M22 48h24M22 62h20" />
+          <path d="M74 34h24M74 48h24M78 62h20" />
+        </svg>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <div class="topbar">
+        <label class="dimmer" for="brightness">
+          <span>Lamp brightness</span>
+          <input type="range" id="brightness" min="20" max="150" step="5" value="100" />
+        </label>
+        <label class="switch" for="themeToggle">
+          <input type="checkbox" id="themeToggle" />
+          <span class="track"><span class="knob"></span></span>
+          <span id="themeLabel">Lamplight</span>
+        </label>
+      </div>
+
+
+      <p class="eyebrow">An almanac of <em>everything</em> that happened today</p>
+      <h1 class="date-headline" id="headline">Today</h1>
+      <div class="gold-rule"></div>
+
+      <div class="date-row">
+        <div class="field">
+          <label for="datePicker">Turn to a different date</label>
+          <input type="date" id="datePicker" />
+        </div>
+        <div class="field">
+          <label for="regionPicker">History of</label>
+          <select id="regionPicker"></select>
+        </div>
+        <button class="btn btn--ghost" id="todayBtn" type="button">Back to today</button>
+      </div>
+
+      <p class="scope-note" id="scopeNote"></p>
+
+      <div class="tabs" role="tablist" aria-label="Categories">
+        <button class="tab" role="tab" id="tab-events" data-cat="events" aria-selected="true">Events</button>
+        <button class="tab" role="tab" id="tab-births" data-cat="births" aria-selected="false">Births</button>
+        <button class="tab" role="tab" id="tab-deaths" data-cat="deaths" aria-selected="false">Deaths</button>
+      </div>
+
+      <section id="leafHost" aria-live="polite"></section>
+
+      <div class="under">
+        <span class="counter" id="counter"></span>
+        <button class="btn btn--solid" id="turnBtn" type="button" disabled>Turn the page</button>
+      </div>
+
+      <div class="vol" id="vol"></div>
+
+      <footer>
+        Entries drawn from
+        <a href="https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day" target="_blank" rel="noopener">
+          Wikipedia's On This Day API</a
+        >. Text available under CC BY-SA.
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var LABELS = { events: "Events", births: "Births", deaths: "Deaths" };
+        var MONTHS = [
+          "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December",
+        ];
+
+        var host = document.getElementById("leafHost");
+        var counterEl = document.getElementById("counter");
+        var turnBtn = document.getElementById("turnBtn");
+        var headline = document.getElementById("headline");
+        var picker = document.getElementById("datePicker");
+        var todayBtn = document.getElementById("todayBtn");
+        var volEl = document.getElementById("vol");
+        var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+
+        var regionPicker = document.getElementById("regionPicker");
+        var scopeNote = document.getElementById("scopeNote");
+        var themeToggle = document.getElementById("themeToggle");
+        var themeLabel = document.getElementById("themeLabel");
+
+        var REGIONS = [
+          { id: "world", name: "World history", words: [] },
+          { id: "india", name: "India", words: ["india", "indian", "delhi", "mumbai", "bombay", "calcutta", "kolkata", "madras", "chennai", "bengal", "punjab", "kashmir", "mughal", "maratha", "gandhi", "nehru", "hindu", "sikh", "hyderabad", "bangalore", "gujarat", "kerala", "rajasthan", "tamil"] },
+          { id: "usa", name: "United States", words: ["united states", "u.s.", "us ", "american", "america", "washington", "new york", "california", "texas", "chicago", "confederate", "nasa", "president of the united states"] },
+          { id: "uk", name: "United Kingdom", words: ["england", "english", "britain", "british", "united kingdom", "london", "scotland", "scottish", "wales", "welsh", "ireland", "irish", "king of england", "queen of england"] },
+          { id: "china", name: "China", words: ["china", "chinese", "beijing", "peking", "shanghai", "qing", "ming dynasty", "han dynasty", "tang dynasty", "hong kong", "taiwan", "mao"] },
+          { id: "japan", name: "Japan", words: ["japan", "japanese", "tokyo", "kyoto", "edo", "hiroshima", "nagasaki", "samurai", "meiji"] },
+          { id: "france", name: "France", words: ["france", "french", "paris", "napoleon", "versailles", "louis xiv", "marseille", "gaul"] },
+          { id: "germany", name: "Germany", words: ["germany", "german", "berlin", "prussia", "prussian", "munich", "nazi", "weimar", "bavaria"] },
+          { id: "russia", name: "Russia", words: ["russia", "russian", "soviet", "ussr", "moscow", "leningrad", "saint petersburg", "stalin", "lenin", "tsar", "czar"] },
+          { id: "italy", name: "Italy", words: ["italy", "italian", "rome", "roman", "venice", "florence", "naples", "milan", "sicily", "vatican", "pope"] },
+          { id: "spain", name: "Spain", words: ["spain", "spanish", "madrid", "barcelona", "castile", "aragon", "catalonia"] },
+          { id: "brazil", name: "Brazil", words: ["brazil", "brazilian", "rio de janeiro", "sao paulo", "são paulo", "brasilia"] },
+          { id: "canada", name: "Canada", words: ["canada", "canadian", "ontario", "quebec", "toronto", "montreal", "vancouver"] },
+          { id: "australia", name: "Australia", words: ["australia", "australian", "sydney", "melbourne", "queensland", "new south wales"] },
+          { id: "egypt", name: "Egypt", words: ["egypt", "egyptian", "cairo", "nile", "pharaoh", "alexandria"] },
+          { id: "pakistan", name: "Pakistan", words: ["pakistan", "pakistani", "karachi", "lahore", "islamabad"] },
+          { id: "southafrica", name: "South Africa", words: ["south africa", "south african", "johannesburg", "cape town", "apartheid", "mandela", "pretoria", "boer"] },
+          { id: "mexico", name: "Mexico", words: ["mexico", "mexican", "mexico city", "aztec", "yucatan"] },
+        ];
+
+        function regionById(id) {
+          for (var i = 0; i < REGIONS.length; i++) if (REGIONS[i].id === id) return REGIONS[i];
+          return REGIONS[0];
+        }
+
+        var state = {
+          date: new Date(),
+          cat: "events",
+          raw: [],
+          facts: [],
+          index: 0,
+          token: 0,
+          region: "world",
+        };
+
+        function pad(n) { return String(n).padStart(2, "0"); }
+        function isoOf(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+
+        function dayOfYear(d) {
+          var start = new Date(d.getFullYear(), 0, 0);
+          return Math.floor((d - start) / 86400000);
+        }
+
+        function yearLabel(year) {
+          if (typeof year !== "number") return "Undated";
+          return year < 0 ? Math.abs(year) + " BCE" : String(year);
+        }
+
+        function esc(s) {
+          return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+          });
+        }
+
+        function placeholder(message) {
+          host.innerHTML =
+            '<div class="leaf leaf--placeholder"><p class="fact" style="margin:0">' +
+            esc(message) +
+            "</p></div>";
+          counterEl.textContent = "";
+          turnBtn.disabled = true;
+        }
+
+        function pickPage(fact) {
+          var pages = fact.pages || [];
+          for (var i = 0; i < pages.length; i++) {
+            if (pages[i] && pages[i].titles) return pages[i];
+          }
+          return pages[0] || null;
+        }
+
+        function renderFact() {
+          var fact = state.facts[state.index];
+          if (!fact) {
+            var r = regionById(state.region);
+            placeholder(
+              r.id === "world"
+                ? "No " + LABELS[state.cat].toLowerCase() + " are recorded for this date."
+                : "No " + LABELS[state.cat].toLowerCase() + " tied to " + r.name + " are recorded for this date."
+            );
+            return;
+          }
+          var page = pickPage(fact);
+          var title = page && page.titles ? page.titles.normalized || page.titles.canonical : "";
+          var apiTitle = page && page.titles ? page.titles.canonical || title : "";
+          var url =
+            page && page.content_urls && page.content_urls.desktop
+              ? page.content_urls.desktop.page
+              : "";
+
+          var thumb =
+            page && page.thumbnail && page.thumbnail.source
+              ? page.thumbnail.source
+              : "";
+          if (thumb.indexOf("//") === 0) thumb = "https:" + thumb;
+
+          var params = new URLSearchParams({
+            title: apiTitle || title || "",
+            year: fact.year != null ? String(fact.year) : "",
+            text: fact.text || "",
+            url: url,
+            category: state.cat,
+            thumb: thumb,
+          });
+
+          var portrait =
+            thumb
+              ? '<figure class="portrait">' +
+                '<img src="' + esc(thumb) + '" alt="Portrait of ' + esc(title) + '" ' +
+                'width="112" height="112" loading="lazy" ' +
+                'onerror="this.closest(\'figure\').remove()" />' +
+                "</figure>"
+              : "";
+
+          host.innerHTML =
+            '<article class="leaf leaf--enter">' +
+            portrait +
+            '<span class="badge">' + esc(yearLabel(fact.year)) + " · " + esc(LABELS[state.cat]) + "</span>" +
+            '<p class="fact">' + esc(fact.text) + "</p>" +
+            '<a class="link" href="detail.html?' + esc(params.toString()) + '">Learn more</a>' +
+            '<p class="leaf-meta">' + esc(LABELS[state.cat]) + " on this date</p>" +
+            "</article>";
+
+          counterEl.textContent = state.index + 1 + " of " + state.facts.length;
+          turnBtn.disabled = state.facts.length < 2;
+        }
+
+        function shuffleTo() {
+          if (state.facts.length < 2) return;
+          var next = state.index;
+          while (next === state.index) next = Math.floor(Math.random() * state.facts.length);
+          state.index = next;
+          renderFact();
+        }
+
+        function syncChrome() {
+          var d = state.date;
+          headline.textContent = MONTHS[d.getMonth()] + " " + d.getDate();
+          picker.value = isoOf(d);
+          volEl.textContent = "Vol. " + d.getFullYear() + " — Leaf " + dayOfYear(d);
+        }
+
+        function haystack(fact) {
+          var bits = [fact.text || ""];
+          var pages = fact.pages || [];
+          for (var i = 0; i < pages.length; i++) {
+            var p = pages[i] || {};
+            if (p.titles) bits.push(p.titles.normalized || p.titles.canonical || "");
+            if (p.description) bits.push(p.description);
+          }
+          return bits.join(" ").toLowerCase().replace(/_/g, " ");
+        }
+
+        function applyRegion() {
+          var r = regionById(state.region);
+          if (!r.words.length) {
+            state.facts = state.raw.slice();
+          } else {
+            state.facts = state.raw.filter(function (f) {
+              var h = haystack(f);
+              for (var i = 0; i < r.words.length; i++) {
+                if (h.indexOf(r.words[i]) !== -1) return true;
+              }
+              return false;
+            });
+          }
+          scopeNote.textContent =
+            r.id === "world"
+              ? "Showing entries from all over the world."
+              : "Showing only entries connected to " + r.name + " — " + state.facts.length +
+                (state.facts.length === 1 ? " entry found." : " entries found.");
+          state.index = state.facts.length ? Math.floor(Math.random() * state.facts.length) : 0;
+          renderFact();
+        }
+
+        function load() {
+          var token = ++state.token;
+          syncChrome();
+          placeholder("Opening the almanac…");
+
+          var d = state.date;
+          var url =
+            "https://en.wikipedia.org/api/rest_v1/feed/onthisday/" +
+            state.cat + "/" + pad(d.getMonth() + 1) + "/" + pad(d.getDate());
+
+          fetch(url, { headers: { Accept: "application/json" } })
+            .then(function (r) {
+              if (!r.ok) throw new Error("bad response");
+              return r.json();
+            })
+            .then(function (data) {
+              if (token !== state.token) return;
+              var list = (data && data[state.cat]) || [];
+              state.raw = list.filter(function (f) { return f && f.text; });
+              applyRegion();
+            })
+            .catch(function () {
+              if (token !== state.token) return;
+              state.raw = [];
+              state.facts = [];
+              placeholder("The almanac didn't answer. Check your connection and try again.");
+            });
+        }
+
+        REGIONS.forEach(function (r) {
+          var opt = document.createElement("option");
+          opt.value = r.id;
+          opt.textContent = r.name;
+          regionPicker.appendChild(opt);
+        });
+
+        try {
+          var savedRegion = localStorage.getItem("tdih-region");
+          if (savedRegion) state.region = regionById(savedRegion).id;
+        } catch (e) {}
+        regionPicker.value = state.region;
+
+        regionPicker.addEventListener("change", function () {
+          state.region = regionPicker.value;
+          try { localStorage.setItem("tdih-region", state.region); } catch (e) {}
+          applyRegion();
+        });
+
+        var brightness = document.getElementById("brightness");
+
+        function setGlow(v) {
+          document.body.style.setProperty("--glow", String(v / 100));
+          brightness.value = String(v);
+          try { localStorage.setItem("tdih-glow", String(v)); } catch (e) {}
+        }
+
+        function setTheme(on) {
+          document.body.classList.toggle("neon", on);
+          themeToggle.checked = on;
+          themeLabel.textContent = on ? "Lamplight" : "Reading room";
+          try { localStorage.setItem("tdih-theme", on ? "neon" : "day"); } catch (e) {}
+        }
+
+        var storedTheme = null, storedGlow = null;
+        try {
+          storedTheme = localStorage.getItem("tdih-theme");
+          storedGlow = localStorage.getItem("tdih-glow");
+        } catch (e) {}
+        setTheme(storedTheme === "neon");
+        setGlow(storedGlow ? Number(storedGlow) : 100);
+
+        themeToggle.addEventListener("change", function () {
+          setTheme(themeToggle.checked);
+        });
+
+        brightness.addEventListener("input", function () {
+          setGlow(Number(brightness.value));
+        });
+
+
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            if (state.cat === tab.dataset.cat) return;
+            state.cat = tab.dataset.cat;
+            tabs.forEach(function (t) {
+              t.setAttribute("aria-selected", String(t === tab));
+            });
+            load();
+          });
+        });
+
+        turnBtn.addEventListener("click", shuffleTo);
+
+        picker.addEventListener("change", function () {
+          var parts = picker.value.split("-").map(Number);
+          if (parts.length !== 3 || !parts[0]) return;
+          state.date = new Date(parts[0], parts[1] - 1, parts[2]);
+          load();
+        });
+
+        todayBtn.addEventListener("click", function () {
+          state.date = new Date();
+          load();
+        });
+
+        load();
+      })();
+    </script>
+  </body>
+</html>
